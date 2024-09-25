@@ -1,0 +1,767 @@
+/* Reset básico para remover margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    letter-spacing: normal;
+    background-color: #f4f4f4;
+    line-height: 1.1;
+    
+}
+
+
+/* Estilos do header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #000;
+    z-index: 1000;
+    transition: padding 0.3s ease;
+}
+
+header.small {
+    padding: 5px 10px; /* Tamanho reduzido ao rolar */
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Container principal que vai alinhar a logo e o texto */
+.logo-container {
+    display: flex; 
+    align-items: center;
+}
+
+#nomedaempresa {
+    display: flex;
+    margin-left: 30px;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    
+    
+}
+
+#nomedaempresa h1 {
+    color: #FF0000;
+    font-size: 24px; 
+}
+
+#nomedaempresa p {
+    font-size: 10px; 
+    color: #000; 
+    background-color: #fff;
+    padding: 0px 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.603) ;
+}
+
+
+/* Logo */
+.logo {
+    margin-left: 50px;
+    max-width: 500px;
+    height: 50px;
+    display: block;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    background-color: #25D366; 
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    #nomedaempresa h1 {
+        font-size: 16px;
+    }
+
+    #nomedaempresa p {
+        font-size: 8px;
+    }
+
+    .logo {
+        margin-left: 10px;
+        max-width: 300px;
+    }
+}
+
+#nomedaempresa p {
+    font-size: 6px; 
+    color: #000; 
+    background-color: #fff;
+    padding: 2px 2px 0px;
+    box-shadow: 2px 2px 2px rgba(248, 248, 250, 0.603) ;
+    border-radius: 2px;
+}
+.logo {
+    margin-left: 10px;
+    max-width: 300px;
+    height: 50px;
+    
+}
+
+/* Estilos gerais para o menu */
+nav {
+    position: relative;
+    background-color: #000;
+    z-index: 1000; /* Garantir que o menu apareça acima de outros elementos */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FF0000;
+    color: #ffffff;
+}
+
+/* Submenu (dropdown) */
+nav ul li ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    width: 200px; /* Ajustado para caber melhor */
+}
+
+nav ul li ul li a {
+    padding: 10px;
+    background-color: #333;
+    font-weight: normal;
+}
+
+nav ul li ul li a:hover {
+    background-color: #ff0000;
+}
+
+/* Exibir submenu ao passar o mouse em telas maiores */
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Seta indicativa para itens com submenu */
+nav ul li a.has-submenu::after {
+    content: ' \f0d7'; /* Código da seta */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Estilo do botão WhatsApp */
+.whatsapp {
+    margin-right: 15px;
+}
+
+/* Menu hambúrguer */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    nav {
+        display: none; /* O menu começa oculto */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #424242;
+        width: 100%; /* O menu ocupará a largura total */
+        z-index: 9999;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    /* Estilos para o submenu no mobile */
+    nav ul li ul {
+        position: static;
+        display: none;
+        box-shadow: none;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav ul li.show-submenu ul {
+        display: block; /* Exibir o submenu ao clicar no item principal no mobile */
+    }
+
+    /* Ocultar a seta indicativa no mobile */
+    nav ul li a.has-submenu::after {
+        display: none;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    
+    margin-top: 70px;
+    background-image: url(../imagens/prevencao-incendio.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    
+    
+}
+
+.hero .title h2 {
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-left: 80px;
+    font-weight: bold;
+}
+
+.hero .title p {
+    font-size: 1em;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-left: 80px;
+    width: 600px;
+    margin-bottom: 50px;
+}
+
+.button-formulario a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF0000; 
+    padding: 10px 20px; 
+    margin-left: 80px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-weight: bold;
+    font-size: 16px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.button-formulario a:hover {
+    background-color: #fbfbfc; 
+    color: #ff0505;
+    transform:scaleY(-2px); /* Efeito de leve elevação */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+@media (max-width: 768px) {
+    
+    .hero {
+        height: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+
+    .hero .title h2 {
+        margin: 0 0 10px 0; /* Espaço abaixo do título */
+        font-size: 30px;
+        text-align: center;
+        line-height: 0.9; /* Ajusta o espaçamento entre as linhas para uma melhor leitura */
+    }
+
+    .hero .title p {
+        font-size: 0.7rem; /* Mantém o tamanho da fonte */
+        margin: 20px 10px 30px 10px; /* Espaço de 10px à esquerda e direita e 20px abaixo */
+        padding: 0; /* Remove o padding adicional no parágrafo */
+        text-align: left; /* Alinha o texto à esquerda */
+        width: auto; /* Deixa a largura se ajustar conforme necessário */
+    }
+    
+
+    .button-formulario a {
+        font-size: 14px; 
+        margin: 0 auto;
+        padding: 10px 20px; 
+        border-radius: 5px; 
+    }
+}
+
+/* Estilo Geral da Seção */
+.secao-servicos {
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.titulo-secao {
+    margin-top: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+@media (max-width: 768px) {
+    .titulo-secao {
+        margin-top: 5px;
+        padding: 5px;
+        font-size: 20px;
+    }
+}
+
+.divisor-secao {
+    width: 70px;
+    height: 3px;
+    background-color: #ff0000;
+    margin: 20px auto 70px;
+    border: none;
+}
+
+.container-servicos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.servico {
+    width: 30%;
+    margin: 20px 0;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.servico:hover {
+    transform: translateY(-5px);
+}
+
+.icone {
+    font-size: 60px;
+    color: #ff0000;
+    position: relative;
+    top: -50px;
+}
+
+.titulo-servico {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Estilo do Botão "Saiba Mais" */
+.botao-saiba-mais {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.botao-saiba-mais:hover {
+    background-color: #555;
+}
+
+
+
+
+
+  
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servico {
+        width: 100%;
+    }
+}
+
+
+/* Serviços */
+
+/* Estilos gerais dos serviços */
+/* Container de Serviços */
+.servicos {
+    margin-top: 93px;
+    height: 100vh;
+    background-image: url(../imagens/background.png); 
+    background-attachment: fixed; /* Efeito de paralaxe */
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap; /* Permite o ajuste no mobile */
+}
+
+/* Item de Serviço */
+.servico-item {
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Arredondamento das bordas */
+    width: calc(33.333% - 30px);
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse no item */
+.servico-item:hover {
+    transform: translateY(-5px); /* Leve elevação */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+/* Título do Serviço */
+.servico-item h3 {
+    color: #D32F2F; /* Vermelho */
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Parágrafo de descrição */
+.servico-item p {
+    color: #2d22be;
+    text-align: left;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+/* Dropdown de Serviço */
+.servico-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1;
+    text-align: left;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
+
+/* Efeito ao passar o mouse no item de serviço */
+.servico-item:hover .servico-dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Lista de serviços dentro do dropdown */
+.servico-dropdown ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.servico-dropdown ul li {
+    color: #333;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efeito hover nos itens da lista */
+.servico-dropdown ul li:hover {
+    background-color: #e00e0e;
+    color: #fff;
+}
+
+/* Links dentro do dropdown */
+.servico-dropdown a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.servico-dropdown a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .servico-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .servico-dropdown {
+        width: auto;
+        left: 0;
+        right: 0;
+        padding: 15px;
+    }
+}
+
+/* Ajustes para tela pequena */
+@media (max-width: 480px) {
+    .servico-item {
+        padding: 15px;
+    }
+
+    .servico-item h3 {
+        font-size: 1.2em;
+    }
+
+    .servico-item p {
+        font-size: 0.9em;
+    }
+}
+
+
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-50%);
+}
+
+/* Estilo para os controles do carrossel (botões) */
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-controls #prevBtn {
+    left: 10px;
+}
+
+.carousel-controls #nextBtn {
+    right: 10px;
+}
+
+/* Mostrar os botões apenas em telas maiores */
+@media (min-width: 769px) {
+    .carousel-controls {
+        display: block;
+    }
+}
+
+/* Ocultar os botões e exibir apenas as bolinhas em telas menores */
+@media (max-width: 768px) {
+    .carousel-controls {
+        display: none; /* Esconde os botões */
+    }
+
+    /* Ajuste das bolinhas/indicadores em telas menores */
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .carousel-indicators li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .carousel-indicators li.active {
+        background-color: #fff;
+    }
+}
+
+
+
+/* Formulário */
+/* Estilizando o container da seção */
+#orcamento {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+    padding: 20px; /* Adiciona um pouco de preenchimento interno */
+    border: 1px solid #ccc; /* Adiciona uma borda ao redor do formulário */
+    border-radius: 5px; /* Arredonda os cantos da borda */
+    background-color: #f9f9f9; /* Cor de fundo leve para o formulário */
+}
+
+/* Estilizando os rótulos e os campos do formulário */
+form label {
+    display: block; /* Faz com que o rótulo ocupe uma linha inteira */
+    margin-bottom: 5px; /* Adiciona espaço abaixo dos rótulos */
+    font-weight: bold; /* Destaca os rótulos */
+}
+
+form input, form textarea {
+    width: 100%; /* Faz com que os campos ocupem toda a largura disponível */
+    padding: 8px; /* Adiciona preenchimento interno aos campos */
+    margin-bottom: 10px; /* Adiciona espaço abaixo dos campos */
+    border: 1px solid #ccc; /* Adiciona uma borda aos campos */
+    border-radius: 4px; /* Arredonda os cantos dos campos */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura total dos campos */
+}
+
+/* Estilizando o botão de envio */
+form button {
+    background-color: #007bff; /* Cor de fundo azul */
+    color: white; /* Cor do texto no botão */
+    padding: 10px 15px; /* Adiciona preenchimento interno ao botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 4px; /* Arredonda os cantos do botão */
+    cursor: pointer; /* Muda o cursor quando passa sobre o botão */
+    font-size: 16px; /* Define o tamanho da fonte no botão */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Altera a cor do botão quando o mouse passa sobre ele */
+}
+
+
+@media (max-width: 768px) {
+    form input,
+    form textarea,
+    form button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+#contato {
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    background-color: #424242;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Ajustes adicionais para tablets e smartphones */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .servico-item {
+        width: calc(50% - 20px);
+    }
+}
