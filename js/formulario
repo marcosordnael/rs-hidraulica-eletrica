@@ -1,0 +1,28 @@
+// Função para enviar o formulário via AJAX
+document.getElementById('orcamento-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita o envio tradicional do formulário
+
+    const formData = new FormData(this); // Captura os dados do formulário
+
+    // Envia a requisição via AJAX para o FormSubmit
+    fetch('https://formsubmit.co/ajax/409aa23e3960ef6756736d06a04a37ec', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Exibe mensagem de sucesso no feedback
+                document.getElementById('form-feedback').innerHTML = "<p>Obrigado! Seu orçamento foi enviado com sucesso.</p>";
+                document.getElementById('orcamento-form').reset(); // Limpa o formulário
+            } else {
+                // Se houver um erro (ex.: verificação CAPTCHA necessária)
+                document.getElementById('form-feedback').innerHTML = "<p>Por favor, complete a verificação CAPTCHA.</p>";
+            }
+        }).catch(error => {
+            // Exibe mensagem de erro em caso de falha
+            document.getElementById('form-feedback').innerHTML = "<p>Ocorreu um erro. Tente novamente mais tarde.</p>";
+        });
+});

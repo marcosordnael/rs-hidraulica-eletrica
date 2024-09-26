@@ -728,6 +728,51 @@ form button:hover {
     background-color: #0056b3; /* Altera a cor do botão quando o mouse passa sobre ele */
 }
 
+#loading {
+    display: none;
+    position: fixed; /* Para fixar no centro da página */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza no meio da tela */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo transparente escuro */
+    padding: 20px;
+    color: white; /* Cor do texto */
+    border-radius: 8px;
+    text-align: center; /* Centraliza o texto e o loader dentro da div */
+    z-index: 1000; /* Para garantir que fique por cima de outros elementos */
+}
+
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #3498db; /* Cor do loader */
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#form-feedback {
+    display: none; /* Inicialmente, está oculto */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0ffe0; /* Fundo verde claro para sucesso */
+    color: #007500; /* Texto verde escuro */
+    border: 1px solid #007500;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
 
 @media (max-width: 768px) {
     form input,
