@@ -23,7 +23,7 @@ header {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 10px;
     background-color: #000;
@@ -165,7 +165,7 @@ nav ul li ul {
     background-color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    width: 200px; /* Ajustado para caber melhor */
+    width: 200px; 
 }
 
 nav ul li ul li a {
@@ -192,6 +192,21 @@ nav ul li a.has-submenu::after {
     right: 4px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.btn-contato {
+    background-color: #FF0000;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    
+}
+
+.btn-contato:hover {
+    transform: scale(1.05);
+    background-color: #d41414;
 }
 
 /* Estilo do botão WhatsApp */
@@ -282,7 +297,14 @@ nav ul li a.has-submenu::after {
     
 }
 
+.hero .title {
+    background-color: #00000081;
+    width: 100%;
+    height: 100%;
+}
+
 .hero .title h2 {
+    margin-top: 150px;
     font-size: 2.8rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
     margin-left: 80px;
@@ -629,10 +651,11 @@ nav ul li a.has-submenu::after {
 
 /* Estilo para os controles do carrossel (botões) */
 .carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.068);
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 54px;
     cursor: pointer;
     padding: 10px;
     position: absolute;

@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="keywords" content="Hidráulica, Elétrica, Prevenção de incêndio, RS Hidráulica e Elétrica">
+    <meta name="author" content="RS Hidráulica e Elétrica">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RS Hidráulica e Elétrica - Serviços de Prevenção de Incêndio para Empresas">
 
@@ -18,6 +20,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
 
@@ -57,6 +63,8 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+
+        <a class="btn-contato" href="#contato" role="button">Entre em contato</a>
         <div id="hamburger" class="hamburger"></div>
 
 
@@ -179,53 +187,63 @@
         </section>  -->
 
     <!-- Carrossel de Imagens com Descrições -->
-    <section id="carrossel">
-        <h2>Alguns de Nossos Serviços Realizados</h2>
-        <div class="carousel">
-            <div class="carousel-images">
-                <div class="carousel-item">
-                    <h2>Conjunto de Válvulas</h2>
-                    <img src="imagens/conjunto-de-valvulas-do-sistema-de-sprinklers-telhado-e-racks-drj.jpg"
-                        alt="Serviço 1">
-                    <p>Conjunto de Válvulas do Sistema de Sprinklers: Telhado e Rack's</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Alarme de incêndio</h2>
-                    <img src="imagens/instalacao-de-sistema-de-deteccao-e-alarme-de-incendio-para-combate-com-gas-drj.jpg"
-                        alt="Serviço 2">
-                    <p>Instalação de Sistema de Detecção e Alarme de Incêndio para Combate com Gás</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Hidrante duplo</h2>
-                    <img src="imagens/instalacao-de-hidrante-duplo-de-combate-a-incendio-drj.jpg" alt="Serviço 3">
-                    <p>Instalação de Hidrante Duplo de Combate a Incêndio</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Conjunto de Moto Bomba</h2>
-                    <img src="imagens/conjunto-moto-bomba-diesel-certificado-ul-fm-drj.jpg" alt="Serviço 4">
-                    <p>Conjunto Moto Bomba Diesel, Certificado UL/FM</p>
-                </div>
-                <div class="carousel-item">
-                    <h2>Teste de Força Bruta</h2>
-                    <video src="imagens/brincadeira.mp4" controls height="500"></video>
-                    <p>Todos os funcionários fazem testes toxicológicos mensalmente.</p>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button id="prevBtn">&lt;</button>
-                <button id="nextBtn">&gt;</button>
-            </div>
-
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#carrossel" data-slide-to="3"></li>
-                <li data-target="#carrossel" data-slide-to="4"></li>
-
-            </ol>
+    <!-- Carrossel de Imagens com Descrições -->
+<section id="carrossel" class="container my-5">
+    <h2 class="text-center mb-4">Alguns de Nossos Serviços Realizados</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      
+      <!-- Indicadores (bolinhas) -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+  
+      <!-- Imagens do Carrossel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imagens/conjunto-de-valvulas-do-sistema-de-sprinklers-telhado-e-racks-drj.jpg" class="d-block w-100" alt="Conjunto de Válvulas">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3">
+            <h5>Conjunto de Válvulas</h5>
+            <p>Conjunto de Válvulas do Sistema de Sprinklers: Telhado e Rack's</p>
+          </div>
         </div>
-    </section>
+        <div class="carousel-item">
+          <img src="imagens/instalacao-de-sistema-de-deteccao-e-alarme-de-incendio-para-combate-com-gas-drj.jpg" class="d-block w-100" alt="Alarme de incêndio">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3">
+            <h5>Alarme de incêndio</h5>
+            <p>Instalação de Sistema de Detecção e Alarme de Incêndio para Combate com Gás</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagens/instalacao-de-hidrante-duplo-de-combate-a-incendio-drj.jpg" class="d-block w-100" alt="Hidrante duplo">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3">
+            <h5>Hidrante duplo</h5>
+            <p>Instalação de Hidrante Duplo de Combate a Incêndio</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagens/conjunto-moto-bomba-diesel-certificado-ul-fm-drj.jpg" class="d-block w-100" alt="Conjunto de Moto Bomba">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3">
+            <h5>Conjunto de Moto Bomba</h5>
+            <p>Conjunto Moto Bomba Diesel, Certificado UL/FM</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Botões de navegação -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </section>
+  
 
     <section id="orcamento">
         <h2>Solicite um Orçamento</h2>
@@ -238,22 +256,22 @@
             <input type="tel" id="telefone" name="telefone" required>
             <label for="mensagem">Descrição do Serviço Necessário:</label>
             <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-    
+
             <!-- Local onde o reCAPTCHA aparecerá -->
             <div id="captcha"></div>
-    
+
             <button type="submit">Solicitar Orçamento</button>
-            
+
             <!-- Indicador de loading -->
             <div id="loading" style="display: none;">Enviando... <span class="loader"></span></div>
         </form>
-    
+
         <!-- Div para exibir a mensagem de feedback -->
         <div id="form-feedback"></div>
     </section>
-    
 
-    
+
+
 
 
     <section id="contato">
