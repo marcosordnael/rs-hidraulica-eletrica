@@ -278,6 +278,10 @@ nav ul li a.has-submenu::after {
     nav ul li a.has-submenu::after {
         display: none;
     }
+
+    .btn-contato {
+        display: none;
+    }
 }
 
 
